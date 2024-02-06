@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="data:image/x-icon;base64,AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICc/8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAICcP8DA87/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHB9D/BwfR/wcHzv8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKCsr/CwvU/wsL1P8LC9T/Cgq9/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMDKf/Dw/Y/w8P2P8PD9j/Dw/Y/w8P2P+Pj4//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACPj4//FRXb/xUV2/8VFdv/FRXb/xUV2/8VFdv/FRXb/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhrd/xoa3/8aGt//Ghrf/xoa3/8aGt//Ghrf/xoa3/8ZGdr/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGhrA/x8f4/8fH+P/Hh7e/w4Oav8AAAAAERF//x8f4f8fH+P/Hx/j/xcXqv8AAAAAAAAAAAAAAAAAAAAAAAAAAMnJ//+9vf//r6///wAAAAAAAAAAAAAAAAAAAAAODlf/JSXo/yUl6P8kJOT/AAAAAAAAAAAAAAAAAAAAAAAAAADOzv//wsL//6+v/v8AAAAAAAAAAAAAAAAAAAAAAAAAACoq6v8qKuz/Kirs/wAAAAAAAAAAAAAAAAAAAAAAAAAA0tL//8fH//+5uf//AAAAAAAAAAAAAAAAAAAAAAAAAABjY///Ly/w/y8v8P8AAAAAAAAAAAAAAAAAAAAAAAAAANbW///Ly///v7///wAAAAAAAAAAAAAAAAAAAAAeHo3/aGj//1xc//9RUf//AAAAAAAAAAAAAAAAAAAAAAAAAAArK7r/0ND//8TE//+3t///Kyu9/yQkJEAvL8z/fHz//25u//9hYf//ICCK/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANTU///Jyf//vLz//66u//+fn///kJD//4GB//9zc///ZWX//wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAzc3//8HB//+zs///paX//5aW//+Hh///MzPG/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACPj4+2JyeV/y4usP8lJYv/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA/38AAP5/AAD+PwAA/B8AAPgPAADwDwAA8AcAAOCDAADjwwAA4+MAAOPjAADjwwAA4IMAAPAHAAD4DwAA/D8AAA==" rel="icon" type="image/x-icon">
+    <title>Philippines Image Map</title>
+
+    <!--INLINE STYLE-->
+    <style>
+        h1, p {
+            text-align: center;
+        }
+        #container {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+        #philippineMap {
+            border: 2px solid #000;
+            margin: 10px;
+            padding: 10px;
+        }
+        #cityInfo {
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #000;
+        }
+    </style>
+    
+</head>
+
+<body>
+    <h1 style="font-family: sans-serif; font-weight: 780;">Let's Explore the Philippines!</h1>
+    <p>Click anywhere on the three islands <span style="color: blue;"><b>Luzon, </b></span><span style="color: rgb(255, 174, 0);"><b>Visayas, </b></span>and <span style="color: red;"><b>Mindanao </b></span>to see certain locations.
+        <br> Every island has <b>three</b> locations, hover your mouse on the map to see their names.</p>
+    <hr>
+    <div id="container">
+        <img id="philippineMap" src="phmap3.png" alt="Philippine Map" usemap="#image-map">
+        <div id="cityInfo"></div>
+    </div>
+    <map name="image-map">
+        <!--LUZON-->
+        <area shape="circle" title="Laoag City" onclick="showCityInfo('Laoag City')" coords="210,193,35" alt="Laoag City">
+        <area shape="circle" title="Sagada City" onclick="showCityInfo('Sagada City')" coords="233,274,29" alt="Sagada City">
+        <area shape="circle" title="Olongapo City" onclick="showCityInfo('Olongapo City')" coords="187,388,29" alt="Olongapo City">
+        <!--VISAYAS-->
+        <area shape="circle" title="Iloilo City" onclick="showCityInfo('Iloilo City')" coords="324,630,28" alt="Iloilo City">
+        <area shape="circle" title="Cebu City" onclick="showCityInfo('Cebu City')" coords="400,661,36" alt="Cebu City">
+        <area shape="circle" title="Tacloban City" onclick="showCityInfo('Tacloban City')" coords="464,602,40" alt="Tacloban City">
+        <!--MINDANAO-->
+        <area shape="circle" title="Zamboanga City" onclick="showCityInfo('Zamboanga City')" coords="294,858,39" alt="Zamboanga City">
+        <area shape="circle" title="Davao City" onclick="showCityInfo('Davao City')" coords="502,848,34" alt="Davao City">
+        <area shape="circle" title="Cagayan de Oro City" onclick="showCityInfo('Cagayan de Oro City')" coords="447,765,34" alt="Cagayan de Oro City">
+    </map>
+
+    <!--SCRIPT-->
+    <!--SCRIPT-->
+    <script>
+        function showCityInfo(city) {
+            var cityInfoElement = document.getElementById("cityInfo");
+            
+            //A NEW CASE IS ADDED FOR A NEW CITY INFORMATION
+            switch(city) {
+                //LUZON LOCATIONS:LAOAG, SAGAD AND OLONGAPO
+                case 'Laoag City':
+                    cityInfoElement.innerHTML = "<b>" + city + "</b>: Laoag is a small city located in the northern part of the Philippines, and it is the capital of Ilocos Norte. The term Laoag traces its etymology in the Ilocano language, meaning “bright” or “light,” hence, it is called the Sunshine City or the City of Lights of the North.<br><br>" + 
+                    "Laoag is home to several historical landmarks and a tropical savanna climate. But it also has mesmerizing sceneries and jam-packed activities that will surely make any traveler’s stay worth it." +
+                    "<br><br><img src='laoagimg.png' alt='Laoag City Image' style='max-width: 100%; height: auto;'>" + "<br><br>Best time to visit <span style='color:#966919'><b>Laoag</b></span>:" + 
+                    "<br><br>Since the Philippines has only two seasons – wet and dry – it is best to visit Laoag during the dry or summer season so that you can roam around the whole city without hassle. But you can carefully plan your visit depending on your budget." +
+                    "<br><br>If you don’t have a big budget for your Laoag trip, you can go during the low season, that is, during the rainy months. Between July to October, most flight fares and hotel accommodation rates in Laoag are lower than usual. But if you want to see Laoag at its peak, the summer seasons of March, April, May, and June are the best time to go." +
+                    "<br><br>For more details, visit <cite><a href='https://www.vacationhive.com/Philippines-tourist-destination-Laoag-Ilocos-Norte-vh4C48CjZfWG2m/' target='_blank'>Laoag City</a></cite>";
+                    break;
+    
+                case 'Sagada City':
+                    cityInfoElement.innerHTML = "<b>" + city + "</b>: Green mountains, extensive caves, indigenous culture, and excellent hikes, all in the mountain town of Sagada." + 
+                    "<br><br>Nestled among verdant mountain landscapes, Sagada is a laid-back town that attracts adventure-seekers who come to hike, spelunk, and climb. However, this is also one of the few places in the Philippines where pre-colonial culture has survived largely unchanged. According to local legend, Sagada was founded as a refuge from lowland headhunters — later, it acted as a safe haven for those fleeing first the Spanish and then 20th-century dictators." +
+                    "<br><br>The town’s far-flung location and steep terrain kept it isolated, and today you can still glimpse the traditional Igorot way of life. Perhaps the best-known examples of this culture are the Echo Valley Hanging Coffins and nearby Burial Cave." +
+                    "<br><br><img src='sagada.png' alt='Sagada City Image' style='max-width: 100%; height: auto;'>" + "<br><br>Best time to visit <span style='color:#0B5345'><b>Sagada</b></span>:" +
+                    "<br><br>For the best combination of comfortable temperatures and sunny skies, professionals suggest visiting from November to February, though December can get busy with visitors." +
+                    "<br><br>For more details, visit <cite><a href='https://www.audleytravel.com/the-philippines/places-to-go/sagada' target='_blank'>Sagada City</a></cite>";
+                    break;
+                
+                case 'Olongapo City':
+                    cityInfoElement.innerHTML = "<b>" + city + "</b>: Olongapo is a coastal highly urbanized city in the Central Luzon region. Although administratively independent due to its distinction as highly urbanized city, Olongapo is commonly grouped with the province of Zambales." +
+                    "<br><br>For most Olongapenos this city is more than just a city, abundant in culture that upholds unity, respect, and companionship. Olongapo is the first city you will ever visit before you travel your way to the outmost northern part of Zambales. Most often visited during the Mardigras, Festivals, and other social gatherings that bring locals and visitors together." +
+                    "<br><br><img src='olongapo.png' alt='Olongapo City Image' style='max-width: 100%; height= auto;'>" + "<br><br>Where to visit in <span style='color:#154360'><b>Olongapo</b></span>:" +
+                    "<br><br><b>Olongapo City Public Market:</b> The Public Market of Olongapo located in Rizal Avenue East Bajac Bajac is the go to place for souvenirs and other knick-knacks that you can take home as “pasalubong”. They have native crafts made by the locals, delicacies and “kakanin” to tickle your taste buds, and other bargains to choose from." +
+                    "<br><br><b>Marikit Park:</b> Located at the center of the City of Olongapo, Marikit Park is the perfect place to loosen up and slack. The main entrance of the park is marked by a concrete mural commemorating the Filipino workers and an R-A5 Vigilante. A playground is accessible for children and young at heart and other facilities for students to hang out, families where they can enjoy their “merienda”." +
+                    "<br><br><b>Ulo ng Apo Monument:</b> A soaring and magnificent statue located at the center separating Rotonda and Bajac-Bajac. A distinguished shrine in honor to the legend of the city and a perceptible tourist attraction." +
+                    "<br><br>For more details, visit <cite><a href='https://subic.com/olongapo.php' target='_blank'>Olongapo City</a></cite>";
+                    break;
+                //VISAYAS LOCATIONS: 
+                case 'Iloilo City':
+                    cityInfoElement.innerHTML = "<b>" + city + "</b>: Iloilo is a province of the Philippines, located in the center of the Philippine archipelago. The province comprises the southeastern part of Panay Island with island-province of Guimaras just across its coast. The capital city of the province of Iloilo is the City of Iloilo, which is also one of the major urban centers in the Philippines. It is nicknamed “the Heart of the Philippines”." +
+                    "<br><br>Iloilo City is a coastal highly urbanized city in the Western Visayas region. Although administratively independent due to its distinction as highly urbanized city, Iloilo City is commonly grouped with the province of Iloilo. The highly urbanized city also serves as the provincial capital as well as the regional center of Western Visayas." +
+                    "<br><br><img src='iloilo.png' alt='Iloilo City Image' style='max-width: 100%; height= auto;'>" + "<br><br>The province is blessed with unbelievable islands and islets that could rival the famous Boracay Island anytime. There are hidden caves and lagoons, majestic mountains and falls, and a full lineup of heritage homes and century old churches that stand today as living museums." +
+                    "<br><br>A vacation in Iloilo City and its neighboring towns will give you a glimpse of the province’s natural beauty as well as the opulence of its heritage homes." + 
+                    "<br><br>For more details, visit <cite><a href='https://guidetothephilippines.ph/articles/what-to-experience/iloilo-tourist-spots' target='_blank'>Iloilo City</a></cite>";
+                    break;
+                
+                case 'Cebu City':
+                    cityInfoElement.innerHTML = "<b>" + city + "</b>: Home to nearly 170 islands, Cebu lives up to its moniker as 'The Gateway to a Thousand Journeys.' There isn't a shortage of explorations and activities to do in Cebu, not to mention good Filipino food to sate your cravings in between, easily making it one of the best tourist spots in the Philippines." +
+                    "<br><br>You'll also find it easy to discover the perfect Cebu hotels for your trip, as it is home to some of the most beautiful beach resorts in the Philippines." + 
+                    "<br><br><img src='cebu.png' alt='Cebu City Image' style='max-width: 100%; height= auto;'>" + "<br><br>You won't run out of tours and activities to try in Cebu, and because of its location, accessibility, and airport that services international and domestic flights, including Manila's Ninoy Aquino International Airport and Baguio's reopened Loakan Airport, you can also easily other destinations in the Philippines." +
+                    "<br><br>If your visit falls in January, you can also take part in the fun and colorful Sinulog Festival, one of the most popular Philippine festivals." +
+                    "<br><br>For more details, visit <cite><a href='https://guidetothephilippines.ph/articles/what-to-experience/cebu-tourist-spots-1' target='_blank'>Cebu City</a></cite>";
+                    break;
+                    
+                
+                case 'Tacloban City':
+                    cityInfoElement.innerHTML = "<b>" + city + "</b>: Tacloban, officially the City of Tacloban, is a 1st class highly urbanized city in the Eastern Visayas region of the Philippines. The city is autonomous from the province of Leyte, although it serves as its provincial capital. According to the 2020 census, Tacloban has a population of 251,881, making it the most populous city in the Eastern Visayas. The city is located 360 miles southeast from Manila." +
+                    "<br><br>An underrated nature destination in the Philippines, Tacloban boasts scenic and refreshing attractions." + "<br><br><img src='tacloban.png' alt='Tacloban City Image' style='max-width: 100%; height= auto;'>" + 
+                    "<br><br>Tacloban is the capital city of the province of Leyte, located in the Eastern Visayas region of the Philippines. It is nestled along the eastern coast of the island of Leyte, facing the Philippine Sea. Tacloban is famously known for being the place where General Douglas MacArthur made his return to the Philippines during World War II." +
+                    "<br><br>Besides its rich history, Tacloban is also known for having delicious local cuisine, particularly seafood dishes, and being a hub for commerce and education in the region. Some popular tourist attractions in the area include the MacArthur Landing Memorial National Park, the Sto. Niño Shrine and Heritage Museum, and the Leyte Landing Memorial Park." +
+                    "<br><br>For more details, visit <cite><a href='https://www.wildtrips.net/places/Tacloban-Philippines-what-to-visit.htm' target='_blank'>Tacloban City</a></cite>";
+                    break;
+                //MINDANAO LOCATIONS:
+                case 'Zamboanga City':
+                    cityInfoElement.innerHTML = "<b>" + city + "</b>: Zamboanga City, officially the City of Zamboanga, is a 1st class highly urbanized city in the Zamboanga Peninsula region of the Philippines. According to the 2020 census, it has a population of 977,234 people." +
+                    "<br><br>Zamboanga, a city in the southern part of the Philippines, is a hidden gem waiting to be discovered by tourists. The place has become a popular Zamboanga holiday destination with its rich cultural heritage, pristine beaches, and stunning natural landscapes." +
+                    "<br><br><img src='zamboanga.png' alt='Zamboanga City Image' style='max-width: 100%; height: auto;'>" + "<br><br>Some must visits in <span style='color: blue'><b>Zamboanga City</b></span>:" +
+                    "<br><br><b>Vista del mar Beach Resort: </b>Vista del Mar Beach Resort, a popular Zamboanga tourist spot, offers guests a luxurious and relaxing escape from the hustle and bustle of city life." +
+                    "<br><br><b>Dulian Falls: </b>Dulian Falls is one of the most popular tourist attractions in the area, drawing visitors from all over the world to witness its stunning beauty." +
+                    "<br><br><b>Abong-abong Park: </b>The Abong-abong park is situated on a hilltop overlooking the city, offering panoramic views of the surrounding area and Basilan Island." +
+                    "<br><br>For more details, visit <cite><a href='https://www.traveloka.com/en-ph/explore/destination/exploring-the-top-tourist-spots-in-zamboanga-philippines-acc/261461' target='_blank'>Zamboanga City</a></cite>";
+                    break;
+
+                case 'Davao City':
+                    cityInfoElement.innerHTML = "<b>" + city + "</b>: Davao City, on the southern Philippine island of Mindanao, is a coastal commercial center near 2,954m-high Mount Apo, the country’s highest peak. In the city center, People’s Park is known for its colorful indigenous sculptures and lighted fountains. It's also home to Durian Dome, named after the pungent, spiky fruit that grows in abundance on Mindanao. The Davao River cuts through the city." +
+                    "<br><br>One of the most well-known destinations in the Philippines is Davao City. The city is the right mix of both natural and man-made attractions, and Davao Airport makes it accessible from other tourist destinations." +
+                    "<br><br><img src='davao.png' alt='Davao City Image' style='max-width: 100%; height: auto;'>" + "<br><br>Some must visits in <span style='color: blue'><b>Davao City</b></span>:" +
+                    "<br><br><b>Samal Island: </b>This piece of paradise is often the go-to destination of travelers exploring this part of the country and is one of the top destinations for island hopping in the Philippines." +
+                    "<br><br><b>Must Try!: </b> Taste the Durian fruit, it's rich fertile volcanic soil and weather make it possible for the freshest, most flavorful Durians.Spend time at Roxas Night Market, taste the different cuisines that Davao City has to offer through the Roxas Avenue Night Market. The various stalls in this famous night market are homes to fresh and cooked kinds of seafood, veggies, meat, and more." +
+                    "<br><br>For more details, visit <cite><a href='https://guidetothephilippines.ph/articles/what-to-experience/davao-tourist-spots' target='_blank'>Davao City</a></cite>";
+                    break;
+
+                case 'Cagayan de Oro City':
+                    cityInfoElement.innerHTML = "<b>" + city + "</b>: Cagayan de Oro, officially the City of Cagayan de Oro, is a 1st class highly urbanized city in the region of Northern Mindanao, Philippines. It is the capital of the province of Misamis Oriental where it is geographically situated but governed administratively independent from the provincial government." +
+                    "<br><br>Cagayan de Oro map is filled with must-see spots for both thrilling and relaxing activities. It’s also the 3rd most popular destination among local tourists next to Cebu in Visayas and Davao in Mindanao, and a safe destination for foreign travelers." +
+                    "<br><br><img src='cagayan de oro.png' alt='Cagayan de Oro City Image' style='max-width: 100%; height: auto;'>" + "<br><br>Some must try in <span style='color: green'><b>Cagayan de Oro City</b></span>:" + 
+                    "<br><br><b>Whitewater Rafting: </b> It the most popular and must-try adventure-filled activity you can do when visiting this province. In this recreational activity, your group will be riding a raft that will navigate Cagayan de Oro river." +
+                    "<br><br><b>Day Trip in Camiguin: </b>If you love the beach and some water activities, a day trip to Camiguin Island is for you. Apart from the white sand beaches, you can also explore its waterfalls, jungles, volcanoes, and of course, its local eats." +
+                    "<br><br>For more details, visit <cite><a href='https://guidetothephilippines.ph/articles/what-to-experience/cagayan-de-oro-tourist-spots' target='_blank'>Cagayan de Oro City</a></cite>";
+                    break;
+
+                default:
+                    // If the city is not handled, display a generic message or handle as needed
+                    cityInfoElement.innerHTML = "Information not available for " + city + ".";
+            }
+        }
+    </script>
+    
+    
+</body>
+
+</html>
